@@ -1,0 +1,48 @@
+name: Generating MD5 for binary
+
+on:
+  push:
+    paths:
+      - 'binary/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Generator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+      - name: get yq
+        run: |
+          wget https://github.com/mikefarah/yq/releases/download/v4.18.1/yq_linux_amd64 -O yq
+          chmod +x yq
+      - name: install rename
+        run: sudo apt install rename -y
+      - name: fetch filelist
+        run: |
+          find binary/ -type f -name "*.*" -exec rename 's/\./DOT/g' {} \;
+          find binary/ -type f -exec echo {} \; > filelist.txt
+          echo '' > meta.yml 
+          chmod +x scripts/write.sh
+      - name: md5gen
+        run: |
+          scripts/write.sh filelist.txt
+          sed -i 's#DOT#.#g' meta.yml
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add meta.yml
+          git commit -m "chore: auto md5gen" 
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      
+
+        
