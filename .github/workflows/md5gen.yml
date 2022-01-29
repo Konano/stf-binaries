@@ -29,7 +29,9 @@ jobs:
           echo '' > meta.yml 
           chmod +x scripts/write.sh
       - name: md5gen
-        run: scripts/write.sh filelist.txt
+        run: |
+          scripts/write.sh filelist.txt
+          sed -i 's#DOT#.#g' meta.yml
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
