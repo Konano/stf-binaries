@@ -24,6 +24,7 @@ jobs:
           find binary/ -type f -name "*.*" -exec rename 's/\./DOT/g' {} \;
           find binary/ -type f -exec echo {} \; > filelist.txt
           echo '' > meta.yml 
+          chmod +x scripts/write.sh
       - name: md5gen
         run: scripts/write.sh filelist.txt
       - name: Commit files
