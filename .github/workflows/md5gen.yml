@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'binary/**'
+  workflow_dispatch
 
 jobs:
   build:
