@@ -34,6 +34,6 @@ md5:
     darwin:
       adb: 4291f344c30f7813dd91cdfa1abb208b
     windows:
-      adbDOTexe: f6e68c4cc8cc3288fd5a411f54d8cae2
-      AdbWinApiDOTdll: ed5a809dc0024d83cbab4fb9933d598d
-      AdbWinUsbApiDOTdll: 0e24119daf1909e398fa1850b6112077
+      adb.exe: f6e68c4cc8cc3288fd5a411f54d8cae2
+      AdbWinApi.dll: ed5a809dc0024d83cbab4fb9933d598d
+      AdbWinUsbApi.dll: 0e24119daf1909e398fa1850b6112077
