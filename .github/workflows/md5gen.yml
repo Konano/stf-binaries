@@ -16,7 +16,10 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-      - uses: mikefarah/yq@v4.18.1
+      - name: get yq
+        run: |
+        wget https://github.com/mikefarah/yq/releases/download/v4.18.1/yq_linux_amd64 -O yq
+        chmod +x yq
       - name: install rename
         run: sudo apt install rename -y
       - name: fetch filelist
