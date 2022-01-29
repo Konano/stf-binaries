@@ -1,0 +1,39 @@
+md5:
+  minitouch:
+    arm64-v8a:
+      bin:
+        minitouch: e36973a9f6710280dd7fefafeef9f7ed
+        minitouch-nopie: e36973a9f6710280dd7fefafeef9f7ed
+    mips:
+      bin:
+        minitouch: 9e0b81e9c65f3b6208554144a84ceb4e
+        minitouch-nopie: ba9cd0fce60103bfdc7c6c49db3ea7bc
+    x86:
+      bin:
+        minitouch: e978b60c9d0061285dde178d87f86448
+        minitouch-nopie: 59ace1e340ff5bbc054928f749da0fd8
+    armeabi:
+      bin:
+        minitouch: 8339e86a4bd85d31521aa6d7f8f02664
+        minitouch-nopie: 735d74a0bdda41769576644774cc4278
+    mips64:
+      bin:
+        minitouch: 0ffa434276b95617b033892cccad6bcb
+        minitouch-nopie: 0ffa434276b95617b033892cccad6bcb
+    armeabi-v7a:
+      bin:
+        minitouch: a6ef312c97157466c03e2692240ae220
+        minitouch-nopie: 03996abbbbebb3895c2ba1767514a636
+    x86_64:
+      bin:
+        minitouch: 87a353eac260f94f7b4a083025134e19
+        minitouch-nopie: 87a353eac260f94f7b4a083025134e19
+  adb-binaries:
+    linux:
+      adb: 70df08a247740587829222cdcea97d53
+    darwin:
+      adb: 4291f344c30f7813dd91cdfa1abb208b
+    windows:
+      adbDOTexe: f6e68c4cc8cc3288fd5a411f54d8cae2
+      AdbWinApiDOTdll: ed5a809dc0024d83cbab4fb9933d598d
+      AdbWinUsbApiDOTdll: 0e24119daf1909e398fa1850b6112077
