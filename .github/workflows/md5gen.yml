@@ -18,8 +18,8 @@ jobs:
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
       - name: get yq
         run: |
-        wget https://github.com/mikefarah/yq/releases/download/v4.18.1/yq_linux_amd64 -O yq
-        chmod +x yq
+          wget https://github.com/mikefarah/yq/releases/download/v4.18.1/yq_linux_amd64 -O yq
+          chmod +x yq
       - name: install rename
         run: sudo apt install rename -y
       - name: fetch filelist
