@@ -1,4 +1,4 @@
-name: Generating MD5 for bianry
+name: Generating MD5 for binary
 
 on:
   push:
